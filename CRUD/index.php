@@ -18,7 +18,7 @@
                 <th>Descripcion</th>
                 <th>Cantidad</th>
                 <th>Precio</th>
-                <th colspan="2">Action</th>
+                <th colspan="2">Accion</th>
             </tr>
         </thead>
 
