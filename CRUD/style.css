@@ -33,6 +33,14 @@ form {
     border-radius: 5px;
 }
 
+.alin{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    border: solid;
+    padding-right: 1rem;
+}
+
 .input-group {
     margin: 10px 0px 10px 0px;
 }

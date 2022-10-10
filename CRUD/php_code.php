@@ -10,6 +10,14 @@
 	$id = 0;
 	$update = false;
 
+    $id2 = 0;
+    $admin = 0;
+    $nombre2 = "";
+    $apellido = "";
+    $email = "";
+    $contraseña = "";
+    $user = "";
+
 	if (isset($_POST['save'])) {
 		$nombre = $_POST['nombre'];
 		$descripcion = $_POST['descripcion'];

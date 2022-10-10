@@ -9,6 +9,14 @@
 
 <body>
 
+    <nav>
+        <div class="alin">
+            <a href=""><p>Login</p></a>
+            &nbsp;&nbsp;&nbsp;
+            <a href="register.php"><p>Register</p></a>
+        </div>
+    </nav>
+
     <?php $results = mysqli_query($db, "SELECT * FROM info"); ?>
 
     <table>
@@ -56,7 +64,7 @@
 
     <form method="post" action="php_code.php">
 
-    <input type="hidden" name="id" value="<?php echo $id; ?>">
+        <input type="hidden" name="id" value="<?php echo $id; ?>">
 
         <div class="input-group">
             <label>Nombre</label>
