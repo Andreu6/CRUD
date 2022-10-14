@@ -10,14 +10,6 @@
 	$id = 0;
 	$update = false;
 
-    $id2 = 0;
-    $admin2 = "";
-    $nombre2 = "";
-    $apellido = "";
-    $email = "";
-    $contraseña = "";
-    $user = "";
-
 	if (isset($_POST['save'])) {
 		$nombre = $_POST['nombre'];
 		$descripcion = $_POST['descripcion'];
@@ -27,19 +19,6 @@
 		mysqli_query($db, "INSERT INTO info (nombre, descripcion, cantidad, precio) VALUES ('$nombre', '$descripcion', $cantidad, $precio)"); 
 		$_SESSION['message'] = "Producto guardado!"; 
 		header('location: index.php');
-	}
-
-    if (isset($_POST['save2'])) {
-        $admin2 = $_POST['admin2']
-		$nombre2 = $_POST['nombre2'];
-		$apellido = $_POST['apellido'];
-        $email = $_POST['email'];
-		$contraseña = $_POST['contraseña'];
-        $user = $_POST['user'];
-
-		mysqli_query($db, "INSERT INTO usuario (admin2, nombre, apellido, email, contraseña, user) VALUES ($admin, '$nombre', '$apellido', '$email', '$contraseña', '$user')"); 
-		$_SESSION['message'] = "Producto guardado!"; 
-		header('location: register.php');
 	}
 
     if (isset($_POST['update'])) {
@@ -60,4 +39,5 @@
         $_SESSION['message'] = "Producto borrado!"; 
         header('location: index.php');
     }
+    
     ?>

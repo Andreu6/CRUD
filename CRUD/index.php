@@ -11,7 +11,7 @@
 
     <nav>
         <div class="alin">
-            <a href=""><p>Login</p></a>
+            <a href="login.php"><p>Login</p></a>
             &nbsp;&nbsp;&nbsp;
             <a href="register.php"><p>Register</p></a>
         </div>
