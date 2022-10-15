@@ -100,50 +100,56 @@ div.form-element {
     margin: 20px 0;
 }
 
-p.success,
-p.error {
-    color: white;
-    font-family: lato;
-    background: yellowgreen;
-    display: inline-block;
-    padding: 2px 10px;
+h1.login-title {
+    color: #666;
+    margin: 0px auto 25px;
+    font-size: 25px;
+    font-weight: 300;
+    text-align: center;
 }
 
-p.error {
-    background: orangered;
+h3 {
+    font-weight: normal;
+    text-align: center;
 }
 
-.labelLogin {
-    width: 150px;
-    display: inline-block;
-    text-align: left;
-    font-size: 1.5rem;
-    font-family: 'Lato';
+.form {
+    margin: 50px auto;
+    width: 300px;
+    padding: 30px 25px;
+    background: white;
 }
 
-.inputLogin {
-    border: 2px solid #ccc;
-    font-size: 1.5rem;
-    font-weight: 100;
-    font-family: 'Lato';
+.login-input {
+    font-size: 15px;
+    border: 1px solid #ccc;
     padding: 10px;
+    margin-bottom: 25px;
+    height: 25px;
+    width: calc(100% - 23px);
 }
-
-.formLogin {
-    margin: 25px auto;
-    padding: 20px;
-    border: 5px solid #ccc;
-    width: 500px;
-    background: #eee;
+.login-input:focus {
+    border-color:#6e8095;
+    outline: none;
 }
-
-.buttonLogin {
-    padding: 10px;
-    font-size: 1.5rem;
-    font-family: 'Lato';
-    font-weight: 100;
-    background: yellowgreen;
-    color: white;
-    border: none;
+.login-button {
+    color: #fff;
+    background: #55a1ff;
+    border: 0;
+    outline: 0;
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+}
+.link {
+    color: #666;
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 0px;
+}
+.link a {
+    color: #666;
 }
 /* https://speedysense.com/create-registration-login-system-php-mysql/ */

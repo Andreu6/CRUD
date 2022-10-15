@@ -1,42 +1,46 @@
-<link rel="stylesheet" type="text/css" href="style.css">
-<form class="formLogin" method="post" action="" name="signin-form">
-    <div class="form-element">
-        <label class="labelLogin">Username</label>
-        <input class="inputLogin" type="text" name="username" pattern="[a-zA-Z0-9]+" required />
-    </div>
-    <div class="form-element">
-        <label class="labelLogin">Password</label>
-        <input class="inputLogin" type="password" name="password" required />
-    </div>
-    <button class="buttonLogin" type="submit" name="login" value="login">Log In</button>
-</form>
-
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
 <?php
- 
-include('config.php');
-session_start();
- 
-if (isset($_POST['login'])) {
- 
-    $username = $_POST['username'];
-    $password = $_POST['password'];
- 
-    $query = $connection->prepare("SELECT * FROM users WHERE USERNAME=:username");
-    $query->bindParam("username", $username, PDO::PARAM_STR);
-    $query->execute();
- 
-    $result = $query->fetch(PDO::FETCH_ASSOC);
- 
-    if (!$result) {
-        echo '<p class="error">Username password combination is wrong!</p>';
-    } else {
-        if (password_verify($password, $result['PASSWORD'])) {
-            $_SESSION['user_id'] = $result['ID'];
-            echo '<p class="success">Congratulations, you are logged in!</p>';
+    require('db.php');
+    session_start();
+    // When form submitted, check and create user session.
+    if (isset($_POST['username'])) {
+        $username = stripslashes($_REQUEST['username']);    // removes backslashes
+        $username = mysqli_real_escape_string($con, $username);
+        $password = stripslashes($_REQUEST['password']);
+        $password = mysqli_real_escape_string($con, $password);
+        // Check user is exist in the database
+        $query    = "SELECT * FROM `users` WHERE username='$username'
+                     AND password='" . md5($password) . "'";
+        $result = mysqli_query($con, $query) or die(mysql_error());
+        $rows = mysqli_num_rows($result);
+        if ($rows == 1) {
+            $_SESSION['username'] = $username;
+            // Redirect to user dashboard page
+            header("Location: dashboard.php");
         } else {
-            echo '<p class="error">Username password combination is wrong!</p>';
+            echo "<div class='form'>
+                  <h3>Usuario/Contraseña Incorrecto</h3><br/>
+                  <p class='link'>Clica aquí para <a href='login.php'>Login</a> de nuevo.</p>
+                  </div>";
         }
-    }
-}
- 
+    } else {
 ?>
+    <form class="form" method="post" name="login">
+        <h1 class="login-title">Login</h1>
+        <input type="text" class="login-input" name="username" placeholder="Nombre" autofocus="true"/>
+        <input type="password" class="login-input" name="password" placeholder="Contraseña"/>
+        <input type="submit" value="Login" name="submit" class="login-button"/>
+        <p class="link">Don't have an account? <a href="registration.php">Registration Now</a></p>
+  </form>
+<?php
+    }
+?>
+</body>
+</html>

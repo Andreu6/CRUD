@@ -13,7 +13,7 @@
         <div class="alin">
             <a href="login.php"><p>Login</p></a>
             &nbsp;&nbsp;&nbsp;
-            <a href="register.php"><p>Register</p></a>
+            <a href="registration.php"><p>Register</p></a>
         </div>
     </nav>
 
