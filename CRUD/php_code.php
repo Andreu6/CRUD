@@ -1,5 +1,5 @@
 <?php 
-	session_start();
+	/* session_start(); */
 	$db = mysqli_connect('localhost', 'root', 'usbw', 'crud');
 
 	// initialize variables

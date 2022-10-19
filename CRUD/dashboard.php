@@ -1,19 +1,62 @@
 <?php
-//include auth_session.php file on all user panel pages
+//incluir el archivo auth_session.php en todas las páginas del panel de usuario
 include("auth_session.php");
+include('php_code.php');
+$var = $_SESSION["username"];
+$consulta2 = "SELECT `admin` 
+    FROM users
+    WHERE username = '$var'";
+
+    $consulta = mysqli_query($db,$consulta2);
+
+    $fila = $consulta -> fetch_assoc();
+/*     $_SESSION['nombreUsuario'] = $fila["nombreUsuario"]; */
+        echo $fila ['admin'];
+
+
+   if($fila ['admin'] == 1){
+    header("Location: admin.php");
+   } else {
+   }
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Dashboard - Client area</title>
+    <title>Index cliente</title>
     <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-    <div class="form">
-        <p>Hey, <?php echo $_SESSION['username']; ?>!</p>
-        <p>You are in user dashboard page.</p>
-        <p><a href="logout.php">Logout</a></p>
-    </div>
+    <nav>
+        <div class="alin">
+            <p>Hey, <?php echo $_SESSION['username']; ?>!</p>
+            &nbsp;&nbsp;&nbsp;
+            <p><a href="logout.php">Logout</a></p>
+        </div>
+    </nav>
+
+    <?php $results = mysqli_query($db, "SELECT * FROM info"); ?>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+
+        <?php while ($row = mysqli_fetch_array($results)) { ?>
+        <tr>
+            <td><?php echo $row['nombre']; ?></td>
+            <td><?php echo $row['descripcion']; ?></td>
+            <td><?php echo $row['cantidad']; ?></td>
+            <td><?php echo $row['precio']; ?></td>
+        </tr>
+        <?php } ?>
+    </table>
 </body>
 </html>
