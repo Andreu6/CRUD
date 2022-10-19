@@ -37,7 +37,6 @@ form {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    border: solid;
     padding-right: 1rem;
 }
 

@@ -1,9 +1,18 @@
 <?php  include('php_code.php'); ?>
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <title>Index cliente</title>
+
+    <style type="text/css">
+        a:link,
+        a:visited,
+        a:active {
+            text-decoration: none;
+        }
+    </style>
     <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -11,9 +20,23 @@
 
     <nav>
         <div class="alin">
-            <a href="login.php"><p>Login</p></a>
+            <a href="index.php">
+                <b>
+                    <p>Index</p>
+                </b>
+            </a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="login.php">
+                <b>
+                    <p>Login</p>
+                </b>
+            </a>
             &nbsp;&nbsp;&nbsp;
-            <a href="registration.php"><p>Register</p></a>
+            <a href="registration.php">
+                <b>
+                    <p>Register</p>
+                </b>
+            </a>
         </div>
     </nav>
 

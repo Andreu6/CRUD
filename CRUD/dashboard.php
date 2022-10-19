@@ -1,5 +1,5 @@
 <?php
-//incluir el archivo auth_session.php en todas las páginas del panel de usuario
+
 include("auth_session.php");
 include('php_code.php');
 $var = $_SESSION["username"];
@@ -8,11 +8,9 @@ $consulta2 = "SELECT `admin`
     WHERE username = '$var'";
 
     $consulta = mysqli_query($db,$consulta2);
-
     $fila = $consulta -> fetch_assoc();
-/*     $_SESSION['nombreUsuario'] = $fila["nombreUsuario"]; */
-        echo $fila ['admin'];
 
+        echo $fila ['admin'];
 
    if($fila ['admin'] == 1){
     header("Location: admin.php");

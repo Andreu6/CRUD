@@ -9,7 +9,6 @@ $consulta2 = "SELECT `admin`
 
     $consulta = mysqli_query($db,$consulta2);
     $fila = $consulta -> fetch_assoc();
-
 ?>
 
 <!DOCTYPE html>
