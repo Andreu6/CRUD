@@ -26,6 +26,12 @@
                 </b>
             </a>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="carrito.php">
+                <b>
+                    <p>Carrito</p>
+                </b>
+            </a>
+            &nbsp;&nbsp;&nbsp;
             <a href="login.php">
                 <b>
                     <p>Login</p>

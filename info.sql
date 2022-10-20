@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 29-09-2022 a las 13:15:50
+-- Tiempo de generación: 20-10-2022 a las 08:33:36
 -- Versión del servidor: 5.6.13
 -- Versión de PHP: 5.4.17
 
@@ -33,14 +33,18 @@ CREATE TABLE IF NOT EXISTS `info` (
   `cantidad` int(11) NOT NULL,
   `precio` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci AUTO_INCREMENT=8 ;
 
 --
 -- Volcado de datos para la tabla `info`
 --
 
 INSERT INTO `info` (`id`, `nombre`, `descripcion`, `cantidad`, `precio`) VALUES
-(3, 'sadfas', 'safa', 2, 2);
+(3, 'sadfas', 'safa', 2, 2),
+(4, 'dfghdfg', 'dfgdfg', 5, 5),
+(5, 'sdfdsfcsdvxhfd', 'htrdfgsd', 3, 3),
+(6, 'sdfsdfs', 'dsfaasASIOPLJK', 4, 4),
+(7, 'ghjgjglkjñop', '`yjkikñpkl.ñ-kl', 6, 6);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

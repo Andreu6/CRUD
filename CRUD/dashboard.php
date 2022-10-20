@@ -24,6 +24,7 @@ $consulta2 = "SELECT `admin`
     <meta charset="utf-8">
     <title>Index cliente</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
@@ -31,7 +32,8 @@ $consulta2 = "SELECT `admin`
         <div class="alin">
             <p>Hey, <?php echo $_SESSION['username']; ?>!</p>
             &nbsp;&nbsp;&nbsp;
-            <p><a href="logout.php">Logout</a></p>
+            <button onclick="logoutAlert()" style="width:80px;
+        height:19px; margin-top: 1.2rem;">Logout</button> 
         </div>
     </nav>
 
@@ -58,3 +60,26 @@ $consulta2 = "SELECT `admin`
     </table>
 </body>
 </html>
+
+<script type="text/javascript">
+function logoutAlert(){
+
+       swal({
+          title: "Deseas salir de la sesion?",
+          text: "",
+          icon: "warning",
+          buttons: true,
+          dangerMode: true
+
+      }).then(
+
+           function(isConfirm){
+
+           if (isConfirm) {
+
+                window.location = "logout.php";
+
+           }
+        });
+   }
+</script>
